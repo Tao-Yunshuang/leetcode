@@ -2,7 +2,7 @@ An Array is a collection of items. The items are stored in neighboring (contiguo
 On a computer, Arrays can hold up to N items. The value of N is decided by you, the programmer, at the time you create the Array.
 Each of the places is identified using a number in the range of 0 to N - 1. We call these numbers that identify each place indexes.
 
-Array Insertions
+Array Insertions:
 Inserting at the End of an Array:
 At any point in time, we know the index of the last element of the Array, as we've kept track of it in our length variable. All we need to do for inserting an element at the end is to assign the new element to one index past the current last element.
 Inserting at the Start of an Array:
