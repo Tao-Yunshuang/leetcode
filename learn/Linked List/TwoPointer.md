@@ -8,3 +8,15 @@ Algorithm:
 1. The space complexity can be reduced to O(1) by considering two pointers at different speed - a slow pointer and a fast pointer. The slow pointer moves one step at a time while the fast pointer moves two steps at a time.
 2. If there is no cycle in the list, the fast pointer will eventually reach the end and we can return false in this case.
 3. Now consider a cyclic list and imagine the slow and fast pointers are two runners racing around a circle track. The fast runner will eventually meet the slow runner. Why? Consider this case (we name it case A) - The fast runner is just one step behind the slow runner. In the next iteration, they both increment one and two steps respectively and meet each other.
+
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Notice that you should not modify the linked list.
+
+Algorithm:
+1. First, we allocate a Set to store ListNode references.
+2. Then, we traverse the list, checking visited for containment of the current node.
+3. If the node has already been seen, then it is necessarily the entrance to the cycle. If any other node were the entrance to the cycle, then we would have already returned that node instead.
+4. Otherwise, the if condition will never be satisfied, and our function will return null.
