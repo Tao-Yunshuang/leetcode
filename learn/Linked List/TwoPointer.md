@@ -20,3 +20,19 @@ Algorithm:
 2. Then, we traverse the list, checking visited for containment of the current node.
 3. If the node has already been seen, then it is necessarily the entrance to the cycle. If any other node were the entrance to the cycle, then we would have already returned that node instead.
 4. Otherwise, the if condition will never be satisfied, and our function will return null.
+
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+
+It is guaranteed that there are no cycles anywhere in the entire linked structure.
+
+Note that the linked lists must retain their original structure after the function returns.
+
+Algorithm:
+1. Set pointer pA to point at headA.
+2. Set pointer pB to point at headB.
+3. While pA and pB are not pointing at the same node:
+4. If pA is pointing to a null, set pA to point to headB.
+5. Else, set pA to point at pA.next.
+6. If pB is pointing to a null, set pB to point to headA.
+7. Else, set pB to point at pB.next.
+8. Return the value pointed to by pA (or by pB; they're the same now).
