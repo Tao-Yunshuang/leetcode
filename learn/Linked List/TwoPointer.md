@@ -36,3 +36,8 @@ Algorithm:
 6. If pB is pointing to a null, set pB to point to headA.
 7. Else, set pB to point at pB.next.
 8. Return the value pointed to by pA (or by pB; they're the same now).
+
+Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+Algorithm:
+1. Instead of one pointer, we could use two pointers. The first pointer advances the list by n+1 steps from the beginning, while the second pointer starts from the beginning of the list. Now, both pointers are exactly separated by n nodes apart. We maintain this constant gap by advancing both pointers together until the first pointer arrives past the last node. The second pointer will be pointing at the nth node counting from the last. We relink the next pointer of the node referenced by the second pointer to point to the node's next next node.
