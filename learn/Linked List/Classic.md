@@ -28,3 +28,12 @@ You must solve the problem in O(1) extra space complexity and O(n) time complexi
 
 Algorithm:
 1. The algorithm traverses the original LinkedList and put the odd nodes into the oddList and the even nodes into the evenList. To traverse a LinkedList we need at least one pointer as an iterator for the current node. But here the pointers odd and even not only serve as the tail pointers but also act as the iterators of the original list.
+
+Given the head of a singly linked list, return true if it is a palindrome.
+
+Algorithm:
+1. Find the end of the first half.
+2. Reverse the second half.
+3. Determine whether or not there is a palindrome.
+4. Restore the list.
+5. Return the result.
