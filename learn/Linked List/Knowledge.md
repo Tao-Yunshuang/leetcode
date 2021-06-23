@@ -38,3 +38,23 @@ If we want to delete the first node, the strategy will be a little different.
 As we mentioned before, we use the head node head to represent a linked list.
 
 If we want to delete the first node, we can simply assign the next node to head.
+
+Doubly Linked List:
+
+The doubly linked list works in a similar way but has one more reference field which is known as the "prev" field. With this extra field, you are able to know the previous node of the current node.
+
+Similar to the singly linked list, we will use the head node to represent the whole list.
+
+Add Operation - Doubly Linked List
+
+If we want to insert a new node cur after an existing node prev, we can divide this process into two steps:
+1. link cur with prev and next, where next is the original next node of prev;
+2. re-link the prev and next with cur.
+
+Similar to the singly linked list, both the time and the space complexity of the add operation are O(1).
+
+Delete Operation - Doubly Linked List
+
+If we want to delete an existing node cur from the doubly linked list, we can simply link its previous node prev with its next node next.
+
+Since we no longer need to traverse the linked list to get the previous node, both the time and space complexity are O(1).
