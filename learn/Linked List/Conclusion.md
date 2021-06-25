@@ -22,3 +22,15 @@ Algorithm:
 9. Advance both p and q.
 10. Check if carry=1, if so append a new node with digit 1 to the returning list.
 11. Return dummy head's next node.
+
+You are given a doubly linked list which in addition to the next and previous pointers, it could have a child pointer, which may or may not point to a separate doubly linked list. These child lists may have one or more children of their own, and so on, to produce a multilevel data structure, as shown in the example below.
+
+Flatten the list so that all the nodes appear in a single-level, doubly linked list. You are given the head of the first level of the list.
+
+Algorithm:
+1. First of all, we create a stack and then we push the head node to the stack. In addition, we create a variable called prev which would help us to track the precedent node at each step during the iteration.
+2. Then we enter a loop to iterate the stack until the stack becomes empty.
+3. Within the loop, at each step, we first pop out a node (named curr) from the stack. Then we establish the links between prev and curr. Then in the following steps, we take care of the nodes pointed by the curr.next and curr.child pointers respectively, and strictly in this order.
+4. First, if the curr.next does exist (i.e. there exists a right subtree), we then push the node into the stack for the next iteration.
+5. Secondly, if the curr.child does exist (i.e. there exists a left subtree), we then push the node into the stack. In addition, unlike the child.next pointer, we need to clean up the curr.child pointer since it should not be present in the final result.
+6. And voila. Lastly, we also employ the pseudoHead node to render the algorithm more elegant, as we discussed in the previous approach.
