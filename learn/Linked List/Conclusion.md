@@ -34,3 +34,17 @@ Algorithm:
 4. First, if the curr.next does exist (i.e. there exists a right subtree), we then push the node into the stack for the next iteration.
 5. Secondly, if the curr.child does exist (i.e. there exists a left subtree), we then push the node into the stack. In addition, unlike the child.next pointer, we need to clean up the curr.child pointer since it should not be present in the final result.
 6. And voila. Lastly, we also employ the pseudoHead node to render the algorithm more elegant, as we discussed in the previous approach.
+
+Given a Circular Linked List node, which is sorted in ascending order, write a function to insert a value insertVal into the list such that it remains a sorted circular list. The given node can be a reference to any single node in the list and may not necessarily be the smallest value in the circular list.
+
+If there are multiple suitable places for insertion, you may choose any place to insert the new value. After the insertion, the circular list should remain sorted.
+
+If the list is empty (i.e., the given node is null), you should create a new single circular list and return the reference to that single node. Otherwise, you should return the originally given node.
+
+Algorithm:
+1. As we mentioned in the intuition, we loop over the linked list with two pointers (i.e. prev and curr) step by step. The termination condition of the loop is that we get back to the starting point of the two pointers (i.e. prev == head)
+2. During the loop, at each step, we check if the current place bounded by the two pointers is the right place to insert the new value.
+3. If not, we move both pointers one step forwards.
+4. Case 1). The value of new node sits between the minimal and maximal values of the current list. As a result, it should be inserted within the list.
+5. Case 2). The value of new node goes beyond the minimal and maximal values of the current list, either less than the minimal value or greater than the maximal value. In either case, the new node should be added right after the tail node (i.e. the node with the maximal value of the list).
+6. Case 3). Finally, there is one case that does not fall into any of the above two cases. This is the case where the list contains uniform values.
