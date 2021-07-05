@@ -61,3 +61,10 @@ Algorithm:
 1. Traverse the original list and clone the nodes as you go and place the cloned copy next to its original node. This new linked list is essentially a interweaving of original and cloned nodes.
 2. Iterate the list having both the new and old nodes intertwined with each other and use the original nodes' random pointers to assign references to random pointers for cloned nodes. 
 3. Now that the random pointers are assigned to the correct node, the next pointers need to be correctly assigned to unweave the current linked list and get back the original list and the cloned list.
+
+Given the head of a linked list, rotate the list to the right by k places.
+
+Algorithm:
+1. Find the old tail and connect it with the head old_tail.next = head to close the ring. Compute the length of the list n at the same time.
+2. Find the new tail, which is (n - k % n - 1)th node from the head and the new head, which is (n - k % n)th node.
+3. Break the ring new_tail.next = None and return new_head.
