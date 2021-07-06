@@ -64,3 +64,15 @@ Contrary to the case of underfitting, an over-complicated model that is able to 
 
 Similarly with the underfitting case, to avoid the overfitting, one can try out another algorithm that could generate a simpler model from the training data set. Or more often, one stays with the original algorithm that generated the overfitting model, but adds a regularization term to the algorithm, i.e. penalizing the model that is over-complicated so that the algorithm is steered to generate a less complicated model while fitting the data.
 
+Bias:
+
+In a word, the bias of a learner, with regards to an example, is the loss incurred by the difference between the main prediction (the general tendency) and the actual value of the target attribute (target value).
+
+Variance:
+
+In a word, 
+V(xi) measures the loss incurred by its fluctuation around the main prediction in response to different training sets.
+
+Bias-Variance Tradeoff:
+
+Bias is reduced and variance is increased in relation to the complexity of the models produced by a learner.
