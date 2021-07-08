@@ -15,3 +15,16 @@ In-order traversal is to traverse the left subtree first. Then visit the root. F
 Post-order Traversal:
 
 Post-order traversal is to traverse the left subtree first. Then traverse the right subtree. Finally, visit the root.
+
+Recursion-Top Down:
+1. return specific value for null node
+2. update the answer if needed
+3. left_ans = top_down(root.left, left_params)
+4. right_ans = top_down(root.right, right_params)
+5. return the answer if needed
+
+Recursion-Bottom Up:
+1. return specific value for null node
+2. left_ans = bottom_up(root.left)
+3. right_ans = bottom_up(root.right)
+4. return answers
