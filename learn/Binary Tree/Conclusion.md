@@ -19,3 +19,21 @@ Algorithm:
 5. initialize the root with preorder[preorderIndex] and then increment preorderIndex;
 6. recursively use the left and right portions of inorder to construct the left and right subtrees.
 7. Simply call the recursion function with the entire range of inorder.
+
+You are given a perfect binary tree where all leaves are on the same level, and every parent has two children.
+
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+
+Initially, all next pointers are set to NULL.
+
+Algorithm:
+1. We start at the root node. Since there are no more nodes to process on the first level or level 0, we can establish the next pointers on the next level i.e. level 1. An important thing to remember in this algorithm is that we establish the next pointers for a level N while we are still on level N−1 and once we are done establishing these new connections, we move on to N and do the same thing for N+1.
+2. As we just said, when we go over the nodes of a particular level, their next pointers are already established. This is what helps get rid of the queue data structure from the previous approach and helps save space. To start on a particular level, we just need the leftmost node. From there on out, its just a linked list traversal.
+
+Populate each next pointer to point to its next right node. If there is no next right node, the next pointer should be set to NULL.
+
+Initially, all next pointers are set to NULL.
+
+Algorithm:
+1. We start at the root node. Since there are no more nodes to process on the first level or level 0, we can establish the next pointers on the next level i.e. level 1. An important thing to remember in this algorithm is that we establish the next pointers for a level N while we are still on level N−1 and once we are done establishing these new connections, we move on to N and do the same thing for N+1.
+2. As we just said, when we go over the nodes of a particular level, their next pointers are already established. This is what helps get rid of the queue data structure from the previous approach and helps save space. To start on a particular level, we just need the leftmost node. From there on its just a linked list traversal.
