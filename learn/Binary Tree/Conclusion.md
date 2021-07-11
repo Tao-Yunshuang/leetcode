@@ -37,3 +37,13 @@ Initially, all next pointers are set to NULL.
 Algorithm:
 1. We start at the root node. Since there are no more nodes to process on the first level or level 0, we can establish the next pointers on the next level i.e. level 1. An important thing to remember in this algorithm is that we establish the next pointers for a level N while we are still on level N−1 and once we are done establishing these new connections, we move on to N and do the same thing for N+1.
 2. As we just said, when we go over the nodes of a particular level, their next pointers are already established. This is what helps get rid of the queue data structure from the previous approach and helps save space. To start on a particular level, we just need the leftmost node. From there on its just a linked list traversal.
+
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+Algorithm:
+1. Start traversing the tree from the root node.
+2. If the current node itself is one of p or q, we would mark a variable mid as True and continue the search for the other node in the left and right branches.
+3. If either of the left or the right branch returns True, this means one of the two nodes was found below.
+4. If at any point in the traversal, any two of the three flags left, right or mid become True, this means we have found the lowest common ancestor for the nodes p and q.
