@@ -35,3 +35,10 @@ Algorithm:
 2. As for the neighbors function, for each position in the lock i = 0, 1, 2, 3, for each of the turns d = -1, 1, we determine the value of the lock after the i-th wheel has been turned in the direction d.
 3. Care should be taken in our algorithm, as the graph does not have an edge unless both nodes are not in deadends. If our neighbors function checks only the target for being in deadends, we also need to check whether '0000' is in deadends at the beginning. In our implementation, we check at the visitor level so as to neatly handle this problem in all cases.
 4. In Java, our implementation also inlines the neighbors function for convenience, and uses null inputs in the queue to represent a layer change. When the layer changes, we depth++ our global counter, and queue.peek() != null checks if there are still nodes enqueued.
+
+Given an integer n, return the least number of perfect square numbers that sum to n.
+
+Algorithm:
+1. First of all, we prepare a list of square numbers (named square_nums) that are less than the given number n.
+2. We then create a queue variable which would keep all the remainders to enumerate at each level.
+3. In the main loop, we iterate over the queue variable. At each iteration, we check if the remainder is one of the square numbers. If the remainder is not a square number, we subtract it with one of the square numbers to obtain a new remainder and then add the new remainder to the next_queue for the iteration of the next level. We break out of the loop once we encounter a remainder that is of a square number, which also means that we find the solution.
