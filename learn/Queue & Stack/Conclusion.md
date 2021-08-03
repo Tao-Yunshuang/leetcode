@@ -25,3 +25,13 @@ Return the modified image after performing the flood fill.
 
 Algorithm:
 1. we change the color of that pixel to the new color, then check the 4 neighboring pixels to make sure they are valid pixels of the same color, and of the valid ones, we floodfill those, and so on.
+
+Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
+
+The distance between two adjacent cells is 1.
+
+Algorithm:
+1. For our BFS routine, we keep a queue, q to maintain the queue of cells to be examined next.
+2. We start by adding all the cells with 0s to q.
+3. Intially, distance for each 0 cell is 0 and distance for each 1 is INT_MAX, which is updated during the BFS.
+4. Pop the cell from queue, and examine its neighbors. If the new calculated distance for neighbor {i,j} is smaller, we add {i,j} to q and update dist[i][j].
