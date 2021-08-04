@@ -35,3 +35,13 @@ Algorithm:
 2. We start by adding all the cells with 0s to q.
 3. Intially, distance for each 0 cell is 0 and distance for each 1 is INT_MAX, which is updated during the BFS.
 4. Pop the cell from queue, and examine its neighbors. If the new calculated distance for neighbor {i,j} is smaller, we add {i,j} to q and update dist[i][j].
+
+There are n rooms labeled from 0 to n - 1 and all the rooms are locked except for room 0. Your goal is to visit all the rooms. However, you cannot enter a locked room without having its key.
+
+When you visit a room, you may find a set of distinct keys in it. Each key has a number on it, denoting which room it unlocks, and you can take all of them with you to unlock the other rooms.
+
+Given an array rooms where rooms[i] is the set of keys that you can obtain if you visited room i, return true if you can visit all the rooms, or false otherwise.
+
+Algorithm:
+1. When visiting a room for the first time, look at all the keys in that room.
+2. For any key that hasn't been used yet, add it to the todo list (stack) for it to be used.
