@@ -12,4 +12,6 @@ You are climbing a staircase. It takes n steps to reach the top.
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 ALgorithm:
-1. 
+1. One can reach ith step in one of the two ways:
+2. Taking a single step from (i−1)th step.
+3. Taking a step of 2 from (i−2)th step.
