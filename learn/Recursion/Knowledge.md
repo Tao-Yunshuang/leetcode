@@ -25,3 +25,7 @@ There are in general three steps that one can follow in order to solve the probl
 1. Divide. Divide the problem S into a set of subproblems: {S1, S2,...Sn} where n≥2, i.e. there are usually more than one subproblem.
 2. Conquer. Solve each subproblem recursively.
 3. Combine. Combine the results of each subproblem.
+
+Backtracking
+
+Backtracking is a general algorithm for finding all (or some) solutions to some computational problems (notably Constraint satisfaction problems or CSPs), which incrementally builds candidates to the solution and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot lead to a valid solution.
