@@ -21,3 +21,9 @@ Algorithm:
 7. Mark the current node as the last one : last = node.
 8. Call the recursion for the right subtree helper(node.right).
 9. Link the first and the last nodes to close DLL ring and then return the first node.
+
+Given an array of integers heights representing the histogram's bar height where the width of each bar is 1, return the area of the largest rectangle in the histogram.
+
+Algorithm:
+1. In this approach, we maintain a stack.
+2. Initially, we push a -1 onto the stack to mark the end.
