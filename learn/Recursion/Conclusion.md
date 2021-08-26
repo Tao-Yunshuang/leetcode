@@ -27,3 +27,5 @@ Given an array of integers heights representing the histogram's bar height where
 Algorithm:
 1. In this approach, we maintain a stack.
 2. Initially, we push a -1 onto the stack to mark the end.
+3. We start with the leftmost bar and keep pushing the current bar's index onto the stack until we get two successive numbers in descending order, i.e. until we get 
+a[i]<a[i−1].
