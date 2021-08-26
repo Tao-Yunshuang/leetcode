@@ -31,4 +31,5 @@ Algorithm:
 a[i]<a[i−1].
 4. Now, we start popping the numbers from the stack until we hit a number stack[j] on the stack such that a[stack[j]]≤a[i].
 5. Every time we pop, we find out the area of rectangle formed using the current element as the height of the rectangle and the difference between the the current element's index pointed to in the original array and the element stack[top−1]−1 as the width i.e. if we pop an element stack[top] and i is the current index to which we are pointing in the original array, the current area of the rectangle will be considered as: (i−stack[top−1]−1)×a[stack[top]].
-6. 
+6. Further, if we reach the end of the array, we pop all the elements of the stack and at every pop, this time we use the following equation to find the area: (stack[top]−stack[top−1])×a[stack[top]], where stack[top] refers to the element just popped.
+7. Thus, we can get the area of the of the largest rectangle by comparing the new area found everytime.
