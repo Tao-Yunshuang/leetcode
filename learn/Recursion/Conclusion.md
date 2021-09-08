@@ -42,3 +42,15 @@ Algorithm:
 3. Place i-th integer first in the permutation, i.e. swap(nums[first], nums[i]).
 4. Proceed to create all permutations which starts from i-th integer : backtrack(first + 1).
 5. Now backtrack, i.e. swap(nums[first], nums[i]) back.
+
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+
+Algorithm:
+1. If the input is empty, return an empty array.
+2. Initialize a data structure (e.g. a hash map) that maps digits to their letters.
+3. Use a backtracking function to generate all possible combinations.
+4. The function should take 2 primary inputs: the current combination of letters we have, path, and the index we are currently checking.
+5. As a base case, if our current combination of letters is the same length as the input digits, that means we have a complete combination. Therefore, add it to our answer, and backtrack.
+6. Otherwise, get all the letters that correspond with the current digit we are looking at, digits[index].
+7. Loop through these letters. For each letter, add the letter to our current path, and call backtrack again, but move on to the next digit by incrementing index by 1.
+8. Make sure to remove the letter from path once finished with it.
