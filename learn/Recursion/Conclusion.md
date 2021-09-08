@@ -67,8 +67,5 @@ You may assume all buildings are perfect rectangles grounded on an absolutely fl
 The skyline should be represented as a list of "key points" sorted by their x-coordinate in the form [[x1,y1],[x2,y2],...]. Each key point is the left endpoint of some horizontal segment in the skyline except the last point in the list, which always has a y-coordinate 0 and is used to mark the skyline's termination where the rightmost building ends. Any ground between the leftmost and rightmost buildings should be part of the skyline's contour.
 
 Algorithm:
-1. If n == 0 : return an empty list.
-2. If n == 1 : return the skyline for one building (it's straightforward).
-3. leftSkyline = getSkyline for the first n/2 buildings.
-4. rightSkyline = getSkyline for the last n/2 buildings.
-5. Merge leftSkyline and rightSkyline.
+1. Sort the critical point.
+2. For each critical point c, c.y gets the height of the tallest rectangle over c.
