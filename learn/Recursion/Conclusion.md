@@ -33,3 +33,12 @@ a[i]<a[i−1].
 5. Every time we pop, we find out the area of rectangle formed using the current element as the height of the rectangle and the difference between the the current element's index pointed to in the original array and the element stack[top−1]−1 as the width i.e. if we pop an element stack[top] and i is the current index to which we are pointing in the original array, the current area of the rectangle will be considered as: (i−stack[top−1]−1)×a[stack[top]].
 6. Further, if we reach the end of the array, we pop all the elements of the stack and at every pop, this time we use the following equation to find the area: (stack[top]−stack[top−1])×a[stack[top]], where stack[top] refers to the element just popped.
 7. Thus, we can get the area of the of the largest rectangle by comparing the new area found everytime.
+
+Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+
+Algorithm:
+1. If the first integer to consider has index n that means that the current permutation is done.
+2. Iterate over the integers from index first to index n - 1.
+3. Place i-th integer first in the permutation, i.e. swap(nums[first], nums[i]).
+4. Proceed to create all permutations which starts from i-th integer : backtrack(first + 1).
+5. Now backtrack, i.e. swap(nums[first], nums[i]) back.
