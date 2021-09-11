@@ -61,3 +61,22 @@ Algorithm:
 1. Find the mid element of the array.
 2. If mid element > first element of array this means that we need to look for the inflection point on the right of mid.
 3. If mid element < first element of array this that we need to look for the inflection point on the left of mid.We stop our search when we find the inflection point, when either of the two conditions is satisfied: nums[mid] > nums[mid + 1] Hence, mid+1 is the smallest. nums[mid - 1] > nums[mid] Hence, mid is the smallest.
+
+Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
+
+If target is not found in the array, return [-1, -1].
+
+You must write an algorithm with O(log n) runtime complexity.
+
+Algorithm:
+1. Define a function called findBound which takes three arguments: the array, the target to search for, and a boolean value isFirst which indicates if we are trying to find the first or the last occurrence of target.
+2. We use 2 variables to keep track of the subarray that we are scanning. Let's call them begin and end. Initially, begin is set to 0 and end is set to the last index of the array.
+3. We iterate until begin is greater than or equal to end.
+4. At each step, we calculate the middle element mid = (begin + end) / 2. We use the value of the middle element to decide which half of the array we need to search.
+5. nums[mid] == target
+6. isFirst is true ~ This implies that we are trying to find the first occurrence of the element. If mid == begin or nums[mid - 1] != target, then we return mid as the first occurrence of the target. Otherwise, we update end = mid - 1
+7. isFirst is false ~ This implies we are trying to find the last occurrence of the element. If mid == end or nums[mid + 1] != target, then we return mid as the last occurrence of the target. Otherwise, we update begin = mid + 1
+8. nums[mid] > target ~ We update end = mid - 1 since we must discard the right side of the array as the middle element is greater than target.
+9. nums[mid] < target ~ We update begin = mid + 1 since we must discard the left side of the array as the middle element is less than target.
+10. We return a value of -1 at the end of our function which indicates that target was not found in the array.
+11. In the main searchRange function, we first call findBound with isFirst set to true. If this value is -1, we can simply return [-1, -1]. Otherwise, we call findBound with isFirst set to false to get the last occurrence and then return the result.
