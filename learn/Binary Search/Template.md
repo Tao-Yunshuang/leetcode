@@ -33,3 +33,16 @@ Algorithm:
 10. If the target is located in the non-rotated subarray: go right: `start = mid + 1`.
 11. Otherwise: go left: `end = mid - 1`.
 12. We're here because the target is not found. Return -1.
+
+A peak element is an element that is strictly greater than its neighbors.
+
+Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+
+You may imagine that nums[-1] = nums[n] = -∞.
+
+You must write an algorithm that runs in O(log n) time.
+
+Algorithm:
+1. We start off by finding the middle element, mid from the given nums array.
+2. If this element happens to be lying in a descending sequence of numbers. or a local falling slope(found by comparing nums[i] to its right neighbour), it means that the peak will always lie towards the left of this element.
+3. Thus, we reduce the search space to the left of mid(including itself) and perform the same process on left subarray.
