@@ -48,3 +48,16 @@ Algorithm:
 3. Thus, we reduce the search space to the left of mid(including itself) and perform the same process on left subarray.
 4. If the middle element, mid lies in an ascending sequence of numbers, or a rising slope(found by comparing nums[i] to its right neighbour), it obviously implies that the peak lies towards the right of this element.
 5. Thus, we reduce the search space to the right of mid and perform the same process on the right subarray.
+
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times.
+
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+
+You must write an algorithm that runs in O(log n) time.
+
+Algorithm:
+1. Find the mid element of the array.
+2. If mid element > first element of array this means that we need to look for the inflection point on the right of mid.
+3. If mid element < first element of array this that we need to look for the inflection point on the left of mid.We stop our search when we find the inflection point, when either of the two conditions is satisfied: nums[mid] > nums[mid + 1] Hence, mid+1 is the smallest. nums[mid - 1] > nums[mid] Hence, mid is the smallest.
