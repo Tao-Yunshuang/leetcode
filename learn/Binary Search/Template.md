@@ -80,3 +80,13 @@ Algorithm:
 9. nums[mid] < target ~ We update begin = mid + 1 since we must discard the left side of the array as the middle element is less than target.
 10. We return a value of -1 at the end of our function which indicates that target was not found in the array.
 11. In the main searchRange function, we first call findBound with isFirst set to true. If this value is -1, we can simply return [-1, -1]. Otherwise, we call findBound with isFirst set to false to get the last occurrence and then return the result.
+
+Given a sorted integer array arr, two integers k and x, return the k closest integers to x in the array. The result should also be sorted in ascending order.
+
+An integer a is closer to x than an integer b if: |a - x| < |b - x|, or |a - x| == |b - x| and a < b
+
+Algorithm:
+1. As a base case, if arr.length == k, return arr.
+2. Use binary search to find the index of the closest element to x in arr. Initailize two pointers left and right, with left set equal to this index, and right equal to this index plus one.
+3. While the window's size is less than k, check which number is closer to x: arr[left] or arr[right]. Whichever pointer has the closer number, move that pointer towards the edge to include that element in our output.
+4. Return the elements inside arr contained within the window defined between left and right.
