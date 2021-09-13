@@ -90,3 +90,10 @@ Algorithm:
 2. Use binary search to find the index of the closest element to x in arr. Initailize two pointers left and right, with left set equal to this index, and right equal to this index plus one.
 3. While the window's size is less than k, check which number is closer to x: arr[left] or arr[right]. Whichever pointer has the closer number, move that pointer towards the edge to include that element in our output.
 4. Return the elements inside arr contained within the window defined between left and right.
+
+Given the root of a binary search tree and a target value, return the value in the BST that is closest to the target.
+
+ALgorithm:
+1. Go left if target is smaller than current root value.
+2. Go right if target is larger than current root value.
+3. Choose the closest to target value at each step.
